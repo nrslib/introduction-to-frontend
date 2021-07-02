@@ -9,13 +9,14 @@ window.onload = function() {
             if (request.readyState === 4) {
                 if (request.status === 200) {
                     const resultParagraph = document.getElementById("result");
-                    resultParagraph.textContent = request.responseText;
+                    const json = JSON.parse(request.responseText);
+                    resultParagraph.textContent = json.uuid;
                     messageParagraph.textContent = "data received";
                 }
             }
         }
 
-        request.open('GET', 'http://118.27.26.228/my-data.php', true);
+        request.open('GET', 'https://httpbin.org/uuid', true);
         request.send(null);
     });
 

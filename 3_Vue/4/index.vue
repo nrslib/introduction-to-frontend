@@ -26,9 +26,9 @@ module.exports = {
     async executeButtonClick() {
       this.message = 'execute button clicked';
       const self = this;
-      axios.get('http://118.27.26.228/my-data.php')
+      axios.get('https://httpbin.org/uuid')
         .then(function(response) {
-          self.data = response.data['date'];
+          self.data = response.data.uuid;
           self.message = 'data received';
         });
     },

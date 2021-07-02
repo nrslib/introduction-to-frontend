@@ -3,9 +3,9 @@ $(function() {
         $('#message').text('execute button clicked');
 
         $.get({
-            url: 'http://118.27.26.228/my-data.php'
+            url: 'https://httpbin.org/uuid'
         }).done(function(data) {
-            $('#result').text(data["date"]);
+            $('#result').text(data.uuid);
             $('#message').text('data received');
         });
     });
